@@ -2,29 +2,27 @@ package main
 
 import "fmt"
 
-func updateName(x string) string {
-	x = "wedge"
-	return x
+func updateName(x *string) {
+	// takes value from pointer & updates it
+	*x = "wedge"
 }
 
-func updateMenu(y map[string]float64) {
-	y["coffee"] = 9999
+func updateNumber(n *int) {
+	*n = 1000
 }
 
 func main() {
-	// non-pointer values -> strings,int,bools,float,arrays,structs
 	name := "tifa"
+	pointer := &name
 
-	// updateName(name) // returns wedge
+	fmt.Println("memory address of name:", pointer)
+	fmt.Println("value at address of pointer:", *pointer)
 
-	name = updateName(name) // returns tifu & saves it to variable
+	updateName(pointer)
+
 	fmt.Println(name)
 
-	// pointer wrapped values -> slices,maps,functions
-	menu := map[string]float64{
-		"lime":   45,
-		"coffee": 10,
-	}
-	updateMenu(menu)
-	fmt.Println(menu)
+	num := 1
+	updateNumber(&num)
+	fmt.Println("number is:", num)
 }
