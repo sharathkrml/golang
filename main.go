@@ -2,22 +2,29 @@ package main
 
 import "fmt"
 
+func updateName(x string) string {
+	x = "wedge"
+	return x
+}
+
+func updateMenu(y map[string]float64) {
+	y["coffee"] = 9999
+}
+
 func main() {
-	age := 30
-	fmt.Print("hello, \n") //PrintLn adds \n by default
-	fmt.Print("world , ")
+	// non-pointer values -> strings,int,bools,float,arrays,structs
+	name := "tifa"
 
-	// println
-	fmt.Println("my age is", 30)
+	// updateName(name) // returns wedge
 
-	// formatted strings
-	fmt.Printf("My Age is %v and my name is %v  \n", "30", "Sharath")
-	fmt.Printf("My Age is %q and my name is %q  \n", "30", "Sharath") // add "quotes"
-	fmt.Printf("type of age is %T \n", age)                           //Type of variable
-	fmt.Printf("float %0.2f  \n", 2.555)                              // float upto 2 decimal points
-	// Sprintf (Save formatted string!!)
-	formattedStr := fmt.Sprintf("My Age is %v and my name is %v  \n", "30", "Sharath")
+	name = updateName(name) // returns tifu & saves it to variable
+	fmt.Println(name)
 
-	fmt.Println(formattedStr)
-
+	// pointer wrapped values -> slices,maps,functions
+	menu := map[string]float64{
+		"lime":   45,
+		"coffee": 10,
+	}
+	updateMenu(menu)
+	fmt.Println(menu)
 }
