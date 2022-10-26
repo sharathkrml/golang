@@ -1,23 +1,17 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strings"
+)
 
 func main() {
-	age := 30
-	fmt.Print("hello, \n") //PrintLn adds \n by default
-	fmt.Print("world , ")
+	greeting := "hello there!!"
+	fmt.Println(strings.Contains(greeting, "hello"))
+	fmt.Println(strings.ReplaceAll(greeting, "hello", "hii"))
+	fmt.Println(strings.ToUpper((greeting)))
 
-	// println
-	fmt.Println("my age is", 30)
-
-	// formatted strings
-	fmt.Printf("My Age is %v and my name is %v  \n", "30", "Sharath")
-	fmt.Printf("My Age is %q and my name is %q  \n", "30", "Sharath") // add "quotes"
-	fmt.Printf("type of age is %T \n", age)                           //Type of variable
-	fmt.Printf("float %0.2f  \n", 2.555)                              // float upto 2 decimal points
-	// Sprintf (Save formatted string!!)
-	formattedStr := fmt.Sprintf("My Age is %v and my name is %v  \n", "30", "Sharath")
-
-	fmt.Println(formattedStr)
-
+	fmt.Println(strings.Index(greeting, " "))
+	fmt.Println(strings.Split(greeting, " "))
+	fmt.Println(greeting)
 }
