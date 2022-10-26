@@ -2,37 +2,17 @@ package main
 
 import "fmt"
 
-var outsideFunction = "outsideFunction"
-
-// outsideFunctiontwo:= ":= be used outside function"
 func main() {
-	//  string
-	// var nameOne string = "hii"
-	// var nameTwo = "sharath" // type inference
-	// var nameThree string
-	// nameFour := "SHARATH"
+	age := 30
+	fmt.Print("hello, \n") //PrintLn adds \n by default
+	fmt.Print("world , ")
 
-	// fmt.Println(nameOne+" "+nameTwo+" "+nameThree, nameFour)
+	// println
+	fmt.Println("my age is", 30)
 
-	// nameThree = "hiiiiiiii"
-	// fmt.Println(nameOne+" "+nameTwo+" "+nameThree, nameFour)
-
-	// fmt.Println(outsideFunction)
-
-	// ints
-	var ageOne int = 20
-	var ageTwo = 30
-	ageThree := 40
-	fmt.Println(ageOne, ageTwo, ageThree)
-
-	// bits and memory
-
-	// var numOne int8 = 25
-	// var num3 uint8 = 10
-
-	// float
-
-	// var scoreOne float32 = -1.5
-	// var scoreTwo float64 = 89398432.23423
-	// scoreThree := 1.5 // infered to float64
+	// formatted strings
+	fmt.Printf("My Age is %v and my name is %v  \n", "30", "Sharath")
+	fmt.Printf("My Age is %q and my name is %q  \n", "30", "Sharath") // add "quotes"
+	fmt.Printf("type of age is %T \n", age)                           //Type of variable
+	fmt.Printf("float %0.2f", 2.555)                                  // float upto 2 decimal points
 }
