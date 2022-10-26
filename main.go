@@ -3,21 +3,35 @@ package main
 import "fmt"
 
 func main() {
-	age := 30
-	fmt.Print("hello, \n") //PrintLn adds \n by default
-	fmt.Print("world , ")
+	// age := 45
+	// fmt.Println(age >= 50)
+	// fmt.Println(age <= 50)
+	// fmt.Println(age == 30)
+	// fmt.Println(age != 40)
 
-	// println
-	fmt.Println("my age is", 30)
+	// if-else
+	// if age < 40 {
+	// 	fmt.Println("age less than 40")
+	// } else if age < 50 {
+	// 	fmt.Println("age less than 50")
+	// } else {
+	// 	fmt.Println("damn age!!")
+	// }
 
-	// formatted strings
-	fmt.Printf("My Age is %v and my name is %v  \n", "30", "Sharath")
-	fmt.Printf("My Age is %q and my name is %q  \n", "30", "Sharath") // add "quotes"
-	fmt.Printf("type of age is %T \n", age)                           //Type of variable
-	fmt.Printf("float %0.2f  \n", 2.555)                              // float upto 2 decimal points
-	// Sprintf (Save formatted string!!)
-	formattedStr := fmt.Sprintf("My Age is %v and my name is %v  \n", "30", "Sharath")
+	names := []string{"a", "b", "c", "d", "e"}
+	for index, value := range names {
+		if index == 1 {
+			fmt.Println("continuing at pos", index)
+			continue
+		}
+		fmt.Printf("value at pos %v is %v \n", index, value)
+	}
 
-	fmt.Println(formattedStr)
-
+	for index, value := range names {
+		if index == 1 {
+			fmt.Println("breaking at pos", index)
+			break
+		}
+		fmt.Printf("value at pos %v is %v \n", index, value)
+	}
 }
