@@ -1,23 +1,35 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"math"
+)
 
+func sayGreetings(n string) {
+	fmt.Printf("good morning %v \n", n)
+}
+
+func sayBye(n string) {
+	fmt.Printf("good bye %v \n", n)
+}
+
+func cycleNames(n []string, f func(string)) {
+	for _, value := range n {
+		f(value)
+	}
+}
+
+func circleArea(r float64) float64 {
+	return math.Pi * r * r
+}
 func main() {
-	age := 30
-	fmt.Print("hello, \n") //PrintLn adds \n by default
-	fmt.Print("world , ")
-
-	// println
-	fmt.Println("my age is", 30)
-
-	// formatted strings
-	fmt.Printf("My Age is %v and my name is %v  \n", "30", "Sharath")
-	fmt.Printf("My Age is %q and my name is %q  \n", "30", "Sharath") // add "quotes"
-	fmt.Printf("type of age is %T \n", age)                           //Type of variable
-	fmt.Printf("float %0.2f  \n", 2.555)                              // float upto 2 decimal points
-	// Sprintf (Save formatted string!!)
-	formattedStr := fmt.Sprintf("My Age is %v and my name is %v  \n", "30", "Sharath")
-
-	fmt.Println(formattedStr)
+	names := []string{"sharath", "hgihjfe", "jhnoief"}
+	// function which takes in function as argument
+	cycleNames(names, sayBye)
+	// function that returns a value
+	a1 := circleArea(10)
+	a2 := circleArea(2.5)
+	fmt.Printf("are of cirlce a1 is %0.3f \n", a1)
+	fmt.Printf("are of cirlce a2 is %0.3f \n", a2)
 
 }
