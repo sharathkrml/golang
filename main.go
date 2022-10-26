@@ -2,16 +2,17 @@ package main
 
 import (
 	"fmt"
-	"strings"
+	"sort"
 )
 
 func main() {
-	greeting := "hello there!!"
-	fmt.Println(strings.Contains(greeting, "hello"))
-	fmt.Println(strings.ReplaceAll(greeting, "hello", "hii"))
-	fmt.Println(strings.ToUpper((greeting)))
-
-	fmt.Println(strings.Index(greeting, " "))
-	fmt.Println(strings.Split(greeting, " "))
-	fmt.Println(greeting)
+	ages := []int{135, 45, 90}
+	sort.Ints(ages) //alters orignal slice
+	fmt.Println(ages)
+	index := sort.SearchInts(ages, 80)
+	fmt.Println(index)
+	names := []string{"b", "a", "g", "z", "f"}
+	sort.Strings(names)
+	fmt.Println(names)
+	fmt.Println(sort.SearchStrings(names, "g"))
 }
