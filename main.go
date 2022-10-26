@@ -2,22 +2,18 @@ package main
 
 import "fmt"
 
+var score = 9.99 // inside package's scope - if commented,it cannot be used from greetings.go
+
 func main() {
-	age := 30
-	fmt.Print("hello, \n") //PrintLn adds \n by default
-	fmt.Print("world , ")
+	sayHello("sharath")
 
-	// println
-	fmt.Println("my age is", 30)
+	// var score = 9.99 //outside package's scope
 
-	// formatted strings
-	fmt.Printf("My Age is %v and my name is %v  \n", "30", "Sharath")
-	fmt.Printf("My Age is %q and my name is %q  \n", "30", "Sharath") // add "quotes"
-	fmt.Printf("type of age is %T \n", age)                           //Type of variable
-	fmt.Printf("float %0.2f  \n", 2.555)                              // float upto 2 decimal points
-	// Sprintf (Save formatted string!!)
-	formattedStr := fmt.Sprintf("My Age is %v and my name is %v  \n", "30", "Sharath")
+	for _, v := range points {
+		fmt.Println(v)
+	}
 
-	fmt.Println(formattedStr)
-
+	showScore()
 }
+
+//go run main.go greetings.go
