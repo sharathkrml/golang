@@ -18,7 +18,7 @@ func newBill(name string) bill {
 // format the bill
 
 // receiver function,only can be called by bill (like methods inside object)
-func (b bill) format() string {
+func (b *bill) format() string {
 	fs := "bill breakdown \n"
 	var total float64 = 0
 
@@ -26,6 +26,18 @@ func (b bill) format() string {
 		total += v
 		fs += fmt.Sprintf("%-15v...$%v \n", k+":", v)
 	}
+	total += b.tip
+	fs += fmt.Sprintf("%-15v...$%0.2f \n", "tip:", b.tip)
 	fs += fmt.Sprintf("%-15v...$%0.2f", "total:", total)
 	return fs
+}
+
+//update the tip
+
+func (b *bill) updateTip(tip float64) {
+	b.tip = tip
+}
+
+func (b *bill) addItem(name string, price float64) {
+	b.items[name] = price
 }
