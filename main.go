@@ -3,21 +3,19 @@ package main
 import "fmt"
 
 func main() {
-	age := 30
-	fmt.Print("hello, \n") //PrintLn adds \n by default
-	fmt.Print("world , ")
+	menu := map[string]float64{
+		"soup": 4.99,
+		"pie":  5.0,
+	}
+	fmt.Println(menu)
+	fmt.Println(menu["soup"])
+	menu["cb"] = 100
+	for k, v := range menu {
+		fmt.Println(k, v)
+	}
 
-	// println
-	fmt.Println("my age is", 30)
-
-	// formatted strings
-	fmt.Printf("My Age is %v and my name is %v  \n", "30", "Sharath")
-	fmt.Printf("My Age is %q and my name is %q  \n", "30", "Sharath") // add "quotes"
-	fmt.Printf("type of age is %T \n", age)                           //Type of variable
-	fmt.Printf("float %0.2f  \n", 2.555)                              // float upto 2 decimal points
-	// Sprintf (Save formatted string!!)
-	formattedStr := fmt.Sprintf("My Age is %v and my name is %v  \n", "30", "Sharath")
-
-	fmt.Println(formattedStr)
-
+	menu["pie"] = 100
+	for k, v := range menu {
+		fmt.Println(k, v)
+	}
 }
